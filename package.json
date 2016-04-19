@@ -1,6 +1,6 @@
 {
-  "name": "impulse",
-  "version": "0.0.0",
+  "name": "BePulse",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"

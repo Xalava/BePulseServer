@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="fr">
+<% include partials/head %>
+
+<body class="index-page">
+<!-- Navbar -->
+<nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll">
+	<div class="container">
+        <div class="navbar-header">
+	    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
+	        	<span class="sr-only">Toggle navigation</span>
+	        	<span class="icon-bar"></span>
+	        	<span class="icon-bar"></span>
+	        	<span class="icon-bar"></span>
+	    	</button>
+	    	<a href="/">
+	        	<div class="logo-container">
+	                <div class="logo">
+	                    <img src="images/logo.png" alt="Be Pulse" rel="tooltip" title="BePulse" data-placement="bottom" data-html="true">
+	                </div>
+	                <div class="brand">
+	                    BePulse
+	                </div>
+
+
+				</div>
+	      	</a>
+	    </div>
+
+	    <div class="collapse navbar-collapse" id="navigation-index">
+	    	<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="/profile" class="btn" target="">
+						<i class="material-icons">account_circle</i> Profile
+					</a>
+				</li>
+				<li>
+
+				<li>
+					<a rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/events/669974393140483/" target="_blank" class="btn btn-simple">
+						<i class="fa fa-facebook-square"></i> Facebook
+					</a>
+				</li>
+
+
+	    	</ul>
+	    </div>
+	</div>
+</nav>
+<!-- End Navbar -->
+
+<div class="wrapper">
+	<div class="header header-filter" style="background-image: url('images/bg4.jpeg');">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="brand">
+						<h1>Be Pulse</h1>
+						<h3>Admin Panel</h3>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="main main-raised">
+		<div class="section section-basic">
+	    	<div class="container">
+	    		<div class="title">
+	                <h2>Ajouter un défi</h2>
+	            </div>
+
+	            <div class="row">
+					<div class="col-sm-3">
+						<div class="form-group label-floating">
+							<label class="control-label">Défi</label>
+							<input type="text" class="form-control" id="titre">
+						</div>
+	                </div>
+
+					<div class="col-sm-3">
+						<div class="form-group label-floating">
+							<label class="control-label">Description</label>
+							<input type="text" class="form-control">
+						</div>
+					</div>	
+					
+					<div class="col-sm-3">
+						<div class="form-group label-floating">
+							<label class="control-label">Recompense</label>
+							<input type="text" class="form-control">
+						</div>
+					</div>          
+
+					<div class="col-sm-3">
+		                <button onclick="notifyMe()" class="btn btn-primary btn-raised" >
+		                      Lancer 
+		                </button>
+					</div> 
+				</div>   
+
+
+<!-- 	                <button class="btn btn-primary btn-raised" data-toggle="modal" data-target="#myModal">
+	                      Launch demo modal
+	                </button> -->
+
+		
+
+
+			</div>
+		</div> <!--section-->
+	</div>
+
+
+
+
+    <footer class="footer">
+	    <div class="container">
+	        <nav class="pull-left">
+	            <ul>
+					<li>
+						<a href="https://xalava.github.io">
+							BePulse
+						</a>
+					</li>
+
+
+	            </ul>
+	        </nav>
+	        <div class="copyright pull-right">
+	            &copy; 2016, made with <i class="material-icons">favorite</i> by BePulse
+	        </div>
+	    </div>
+	</footer>
+</div>
+
+<!-- Sart Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					<i class="material-icons">clear</i>
+				</button>
+				<h4 class="modal-title">Nouveau Défi!</h4>
+			</div>
+			<div class="modal-body">
+				<p>
+				</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default btn-simple">Nice Button</button>
+				<button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--  End Modal -->
+
+<% include partials/scripts %>
+
+</body>
+</html>
