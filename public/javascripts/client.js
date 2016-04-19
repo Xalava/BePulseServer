@@ -1,12 +1,42 @@
-var INTERVAL = 3000;
+var INTERVAL = 4000;
 
 $(function() {
   setInterval(function(){ checkPush(); }, INTERVAL);
 });
 
+var priorpush
 
 checkPush = function(){
-  
+  $.ajax({
+    type: 'get',
+    url: '/lastpush',
+    success: function (data) {
+    	console.log("Data Loaded: " + data );
+    	if (data != priorpush) {
+      		spawnNotification(data,"images/logo.png","Nouveau Défi !");
+      		priorpush = data;
+	      	}
+	    }
+	})
+}
+
+
+function setpush() {
+	var defi = document.getElementById('titre').value
+	// var data = {defi : defi};
+  $.ajax({
+    type: 'put',
+    url: '/setpush',
+    data: {nom : defi}
+
+	}).done(function(msg){
+
+		console.log("Data pushed result: " + msg  );
+	})
+    
+
+    // console.log("Data pushed: " + defi );
+
 }
 
 
