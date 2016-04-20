@@ -11,7 +11,7 @@ checkPush = function(){
     type: 'get',
     url: '/lastpush',
     success: function (data) {
-    	console.log("Data Loaded: " + data );
+    	// console.log("Data Loaded: " + data );
     	if (data != priorpush) {
       		spawnNotification(data,"images/logo.png","Nouveau Défi !");
       		priorpush = data;
@@ -31,7 +31,7 @@ function setpush() {
 
 	}).done(function(msg){
 
-		console.log("Data pushed result: " + msg  );
+		// console.log("Data pushed result: " + msg  );
 	})
     
 
@@ -67,7 +67,7 @@ function notifyMe() {
   // At last, if the user has denied notifications, and you 
   // want to be respectful there is no need to bother them any more.
 }Notification.requestPermission().then(function(result) {
-  console.log(result);
+  // console.log(result);
 });
 
 

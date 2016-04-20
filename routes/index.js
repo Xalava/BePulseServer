@@ -19,14 +19,12 @@ var dernierpush = 'Remix My Energy'
 
 router.get('/lastpush', function(req, res, next) {
 	res.send(dernierpush);
-	console.log(dernierpush );
+	// console.log(dernierpush );
 });
 
 router.put('/setpush', function(req, res, next) {
-	console.log('body: ' + JSON.stringify(req.body));
+	// console.log('body: ' + JSON.stringify(req.body));
 	dernierpush = req.body.nom; 
-	// res.send('Successfull put');
-
 });
 
 module.exports = router;
