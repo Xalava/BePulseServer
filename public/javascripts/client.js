@@ -78,3 +78,5 @@ function spawnNotification(theBody,theIcon,theTitle) {
   }
   var n = new Notification(theTitle,options);
 }
+
+
