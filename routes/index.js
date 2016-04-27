@@ -5,9 +5,9 @@ var defis = require("../modules/defis.js");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var listeDefis = defis.getListeDefis();
-  console.log(listeDefis);
-  res.render('index', { titre: 'BePulse', defis: listeDefis });
+  defis.getListeDefis().then(function(liste){    
+    res.render('index', { titre: 'BePulse', defis: liste });
+  });
 });
 
 router.get('/profile', function(req, res, next) {

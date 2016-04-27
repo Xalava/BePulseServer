@@ -1,4 +1,6 @@
 var fs = require("fs");
+var Promise = require('promise');
+
 var file = "db/defis.db";
 
 exports.initDefis = function(){
@@ -46,12 +48,16 @@ exports.getListeDefis = function(){
   var sqlite3 = require("sqlite3").verbose();
   var db = new sqlite3.Database(file);
 
-  var liste = [];
-  db.serialize(function() {
+  var promise = new Promise(function (resolve, reject) {
+    var liste = [];
     db.each("SELECT * FROM defis", function(err, row) {
       liste.push(row);
+    },function(){
+      db.close();
+      resolve(liste);
     });
+
   });
-  db.close();
-  return liste;
+
+  return promise;
 }

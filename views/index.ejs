@@ -3,7 +3,6 @@
 <head>
 	<% include partials/head %>
 </head>
-<%= defis %>
 <body class="index-page">
 <!-- Navbar -->
 <nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll">
@@ -71,116 +70,62 @@
 	            </div>
 
 				<div class="row">
-					<div class="col-md-6">
-						<div class="title">
-						</div>
-						<!-- Tabs with icons on Card -->
-						<div class="card card-nav-tabs">
-							<div class="header header-info">
-								<!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
-								<div class="nav-tabs-navigation">
-									<div class="nav-tabs-wrapper">
-										<ul class="nav nav-tabs" data-tabs="tabs">
-											<li class="active">
-												<a href="#profile" data-toggle="tab">
-													<i class="material-icons">flare</i>
-													Défi!
-												</a>
-											</li>
-											<li>
-												<a href="#messages" data-toggle="tab">
-													<i class="material-icons">chat</i>
-													Description
-												</a>
-											</li>
-											<li>
-												<a href="#settings" data-toggle="tab">
-													<i class="material-icons">cake</i>
-													Récompense
-												</a>
+					<% for(var i=0; i<defis.length; i++) {%>
+						<div class="col-md-6">
+							<div class="title">
+							</div>
+							<!-- Tabs with icons on Card -->
+							<div class="card card-nav-tabs">
+								<div class="header header-info">
+									<!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+									<div class="nav-tabs-navigation">
+										<div class="nav-tabs-wrapper">
+											<ul class="nav nav-tabs" data-tabs="tabs">
+												<li class="active">
+													<a href="#profile<%= defis[i].id_defis %>" data-toggle="tab">
+														<i class="material-icons">flare</i>
+														Défi!
+													</a>
+												</li>
+												<li>
+													<a href="#messages<%= defis[i].id_defis %>" data-toggle="tab">
+														<i class="material-icons">chat</i>
+														Description
+													</a>
+												</li>
+												<li>
+													<a href="#settings<%= defis[i].id_defis %>" data-toggle="tab">
+														<i class="material-icons">cake</i>
+														Récompense
+													</a>
 
-											</li>
-										</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="content">
+									<div class="tab-content text-center">
+										<div class="tab-pane active" id="profile<%= defis[i].id_defis %>">
+											<p><%- defis[i].resume %></p>
+
+		                       			 <img src="<%= defis[i].picture %>" alt="Rounded Image" class="img-rounded img-responsive">
+										</div>
+										<div class="tab-pane" id="messages<%= defis[i].id_defis %>">
+											<%- defis[i].description %>
+											<p><i class="material-icons">today</i> <%- defis[i].date_limite %></p>
+
+										</div>
+										<div class="tab-pane" id="settings<%= defis[i].id_defis %>">
+											<p><%- defis[i].recompense %></p>
+										</div>
 									</div>
 								</div>
 							</div>
-							<div class="content">
-								<div class="tab-content text-center">
-									<div class="tab-pane active" id="profile">
-										<p> Cook & Win : Cuisinez avec un légume de saison et gagnez un panier </p>
+							<!-- End Tabs with icons on Card -->
 
-	                       			 <img src="images/examples/panier.jpg" alt="Rounded Image" class="img-rounded img-responsive">
-									</div>
-									<div class="tab-pane" id="messages">
-										<p>Cusinez une recette originale avec un légume de saison, postez une photo de vous avec le résultat ! </p>
-										<p>Un des cuisiniers sera tiré au sort et gagnera un panier de saison !</p>
-										<p><i class="material-icons">today</i> Jusqu'au 18 avril</p>
-
-									</div>
-									<div class="tab-pane" id="settings">
-										<p>Un panier de légumes de saison</p>
-									</div>
-								</div>
-							</div>
 						</div>
-						<!-- End Tabs with icons on Card -->
-
-					</div>
-
-					<div class="col-md-6">
-						<div class="title">
-						</div>
-						<!-- Tabs with icons on Card -->
-						<div class="card card-nav-tabs">
-							<div class="header header-warning">
-								<!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
-								<div class="nav-tabs-navigation">
-									<div class="nav-tabs-wrapper">
-										<ul class="nav nav-tabs" data-tabs="tabs">
-											<li class="active">
-												<a href="#profile2" data-toggle="tab">
-													<i class="material-icons">flare</i>
-													Défi!
-												</a>
-											</li>
-											<li>
-												<a href="#messages2" data-toggle="tab">
-													<i class="material-icons">chat</i>
-													Description
-												</a>
-											</li>
-											<li>
-												<a href="#settings2" data-toggle="tab">
-													<i class="material-icons">cake</i>
-													Récompense
-												</a>
-
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="content">
-								<div class="tab-content text-center">
-									<div class="tab-pane active" id="profile2">
-										<p> Faire un trajet en velo'v</p>
-										<img src="images/examples/velov.jpg" alt="Rounded Image" class="img-rounded img-responsive">
-									</div>
-									<div class="tab-pane" id="messages2">
-										<p>Parcourez plus de 10km en velov</p>
-										<p><i class="material-icons">today</i> Jusqu'au 2 mai</p>
-
-									</div>
-									<div class="tab-pane" id="settings2">
-										<p>Un an d'abonnement velo'v ! </p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- End Tabs with icons on Card -->
-
-					</div>
-				</div> <!-- row -->
+					<% } %>
 
 				<div class="title">
 			        <h2>Défis collectifs</h2>
