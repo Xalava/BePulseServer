@@ -61,3 +61,23 @@ exports.getListeDefis = function(){
 
   return promise;
 }
+
+exports.addDefis = function(id_defis, resume, description, picture, recompense, date_limite){
+
+  // si la base n'existe pas on la crée
+  if(!fs.existsSync(file)){
+    exports.initDefis();
+  }
+
+  var sqlite3 = require("sqlite3").verbose();
+  var db = new sqlite3.Database(file);
+
+  db.run("INSERT INTO defis VALUES (?,?,?,?,?,?)",
+      id_defis,
+      resume,
+      description,
+      picture,
+      recompense,
+      date_limite);
+  });
+}
